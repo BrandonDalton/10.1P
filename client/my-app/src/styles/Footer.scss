@@ -1,0 +1,43 @@
+.footer {
+    display: flex;
+    align-items: center;
+    color: white;
+    max-height: 100px;
+    height: 100%;
+    margin-bottom: 1em;
+
+    .newsletter {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        .title {
+            flex: 1;
+        }
+
+        .input {
+            flex: 1;
+            text-align: left;
+            
+            input {
+                display: inline;
+            }
+        }
+    }
+
+    .spacer {
+        flex: 2;
+    }
+
+    .socials {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        
+        div {
+            padding-right: 1em;
+            
+        }
+
+    }
+}

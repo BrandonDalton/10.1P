@@ -1,0 +1,28 @@
+.requesterTask {
+
+    h1 {
+        text-align: left;
+    }
+    .selectTask {
+        display: flex;
+        flex-direction: column;
+
+        .checkBoxes {
+            display: flex;
+            align-items: baseline;
+    
+            div {
+                flex: 1;
+            }
+        }
+    }
+
+    .taskDesc {
+        display: flex;
+
+        div {
+            flex: 1;
+        }
+    }
+    
+}

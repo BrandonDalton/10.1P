@@ -1,0 +1,40 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    color: white;
+    max-height: 100px;
+    height: 100%;
+    margin-bottom: 1em;
+
+    .title {
+        flex: 1;
+    }
+
+    .menu {
+        flex: 3;
+
+        ul {
+            display: inline;
+
+            li {
+                display: inline;
+                margin: 2em
+            }
+        }
+
+    }
+
+    .signIn {
+        flex: 1;
+
+        ul {
+            display: inline;
+
+            li {
+                display: inline;
+                margin: 2em
+            }
+        }
+
+    }
+}

@@ -1,0 +1,15 @@
+.cardlist {
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+
+    .card {
+        margin: 4em;
+        flex: 1;
+
+        img {
+            max-width: 300px;
+        }
+    }
+
+}
