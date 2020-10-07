@@ -5,6 +5,9 @@ export default class ChoiceeTask extends React.Component {
     render() {
         return (
             <div className={'selectTask'}>
+                <div className={'title'}>
+                <h1>New Requester Task</h1>
+            </div>  
                 <div className={'checkBoxes'}>
                     <div>
                         <h3>Choice Task:</h3>

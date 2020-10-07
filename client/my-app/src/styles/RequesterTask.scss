@@ -1,11 +1,30 @@
 .requesterTask {
 
-    h1 {
-        text-align: left;
+    .button {
+        background: #564E58;
+        width: 100px;
+        margin: 0 auto;
+        padding: 0.4em;
+        margin-top: 5em;
+        border-radius: 5em;
     }
+
+    label {
+        margin-right: 1em;
+    }
+
+    .title {
+        background: #564E58;
+        margin-bottom: 2em;
+        margin-top: 2em;
+        padding: 10px;
+        
+        h1 {
+            text-align: center;
+        }
+    }
+    
     .selectTask {
-        display: flex;
-        flex-direction: column;
 
         .checkBoxes {
             display: flex;

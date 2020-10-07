@@ -5,15 +5,15 @@ import DecisionTask from './decisionTask';
 import SentenceTask from './sentenceTask'
 
 export default function RequesterTask() {
-    const [taskSelect, setTask] = useState();
-    const [title, setTitle] = useState();
-    const [description, setDescription] = useState();
-    const [date, setDate] = useState();
-    const [value, setValue] = useState();
-    const [workerReq, setWorkerReq] = useState();
-    const [rewardRes, setRewardRes] = useState();
-    const [workerRes, setWorkerRes] = useState();
-
+    const [taskSelect, setTask] = useState('');
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [date, setDate] = useState('');
+    const [value, setValue] = useState('');
+    const [workerReq, setWorkerReq] = useState('');
+    const [rewardRes, setRewardRes] = useState('');
+    const [workerRes, setWorkerRes] = useState('');
+    
     const handleChange = (e) => {
         setTask(e.currentTarget.value);
     }
@@ -56,7 +56,7 @@ export default function RequesterTask() {
 
     const handleAnswerRadio = (e) => {
         if (e.currentTarget.checked == true) {
-            setValue(value + e.currentTarget.value);
+            setValue(value + " " + e.currentTarget.value);
         }
     }
 
@@ -66,6 +66,7 @@ export default function RequesterTask() {
                 <ChoiceTask onChangeValue={handleAnswerCheck} />)
         }
         if (taskSelect == 'decisionTask') {
+
             return (
                 <DecisionTask onChangeValue={handleAnswerRadio} />)
         }
@@ -76,7 +77,8 @@ export default function RequesterTask() {
     }
 
     const handleTask = () => {
-        fetch('http://localhost:3000/task', {
+        setValue('');
+        fetch('http://localhost:5000/task', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -85,7 +87,7 @@ export default function RequesterTask() {
                 taskDesc: description,
                 taskDate: date,
                 value: value,
-                workerDetails: workerReq  + rewardRes + workerRes 
+                workerDetails: workerReq  + " " + rewardRes + " "  +  workerRes 
             })
         })
         .then(response => response.json())
@@ -98,7 +100,7 @@ export default function RequesterTask() {
     return (
         <div className={'requesterTask'}>
             <div className={'selectTask'}>
-                <div>
+                <div className={'title'}>
                     <h1>New Requester Task</h1>
                     <h1></h1>
                 </div>
@@ -121,7 +123,7 @@ export default function RequesterTask() {
                 </div>
             </div>
             <div>
-                <div>
+                <div className={'title'}>
                     <h1>Describe your task to Workers</h1>
                 </div>
                 <div className={'taskDesc'}>
@@ -140,11 +142,8 @@ export default function RequesterTask() {
                     </div>
                 </div>
             </div>
-            <div>
-                <h1>New Requester Task</h1>
-            </div>
             {test()}
-            <div>
+            <div className={'title'}>
                 <h1>Worker Requirement</h1>
             </div>
             <div className={'taskDesc'}>
@@ -164,7 +163,7 @@ export default function RequesterTask() {
                     <input type="text" id="number" name="number" onChange={handleWorkerRes}></input>
                 </div>
             </div>
-            <button onClick={handleTask}>Submit</button>
+            <div className={'button'} onClick={handleTask}>Submit</div>
         </div>
     )
 }
